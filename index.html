@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEader -->
+    <header class="navbar navbar-dark bg-dark text-white justify-content-center">
+        <h1>Weather dashboard</h1>
+    </header>
+
+    <!-- PAge BOdy -->
+    <main>
+        <div class="bg-light row margin-0">
+            <div class="col-sm-4 col-md-3 col-lg-3 col-xl-3 search-history">
+                <h5>Search for a city:</h5>
+                
+                <form class="form-group clearfix">
+                    
+                    <!-- Input formm -->
+                    <input type="text" placeholder="Search" name="search" class="form-control" id="city-search-value"/>
+                    
+                    <button type="submit" class="btn btn-primary" id="submit-button"><i class="fa fa-search"></i></button>
+                </form>
+                <p>
+                    Please follow ISO 3166 country codes.
+                    <br>
+                    E.g. Birmingham, GB 
+                </p>
+                
+                <!-- Past Searches -->
+                <div class="text-secondary no-display" id="old-searches-list">
+                    <h5 class="dark-text">Past searches:</h5>
+                </div>
+
+            </div>
+
+            <!-- Active Search City -->
+            <div id="active-city-weather" class="col-sm-8 col-md-9 col-lg-9 col-xl-9 bg-white no-display">
+                <div class="current-conditions row boxed">
+                    <h3 id="current-weather-head"></h3>
+                    <img id="current-weather-img" width="45px" height="45px" alt="Weather icon">
+                    <h6 id="current-temperature"></h6>
+                    <h6 id="current-humidity"></h6>
+                    <h6 id="current-wind"></h6>
+                    <h6 id="statictext-uv">UV index:</h6>
+                    <h6 id="current-uv"></h6>
+                </div>
+
+                <!-- Forecast -->
+                <div class="row forecast">
+                    <h3>5-day forecast:</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-UVIndex" class="modal-content no-display">
+            <div class="modal-header">
+              <h3 id="modal-title">
+                UV Index
+              </h3>
+            </div>
+            <div class="modal-body">
+              <table>
+                <tr>
+                    <th>UV index</th>
+                    <th>Risk of harm</th>
+                    <th>Graphic color</th>
+                </tr>
+                <tr>
+                    <td>0 to 2</td>
+                    <td>Low</td>
+                    <td class="low">Green</td>
+                </tr>
+                <tr>
+                    <td>3 to 5</td>
+                    <td>Moderate</td>
+                    <td class="moderate">Yellow</td>
+                </tr>
+                <tr>
+                    <td>6 to 7</td>
+                    <td>High</td>
+                    <td class="high">Orange</td>
+                </tr>
+                <tr>
+                    <td>8 to 10</td>
+                    <td>Very high</td>
+                    <td class="very-high">Red</td>
+                </tr>
+                <tr>
+                    <td>11+</td>
+                    <td>Extreme</td>
+                    <td class="extreme">Violet</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+    </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./assets/script.js"></script>
+</html>
